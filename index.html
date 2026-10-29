@@ -16,8 +16,9 @@
         <span>Your files stay yours</span>
       </div>
     </nav>
+
     <main class="main-content">
-      <div class="upload-section">
+      <section class="upload-section">
         <h2>Upload your Files</h2>
         <input
           multiple
@@ -27,7 +28,66 @@
         />
         <span class="text">PDF,PNG,JPG or JPEG</span>
         <label for="fileInput" class="upload-button"> Browse Files </label>
-      </div>
+      </section>
+
+      <section class="tool-section">
+        <div class="radial-menu">
+          <svg
+            viewBox="0 0 320 320"
+            class="radial-svg"
+            role="group"
+            aria-label="Choose a PDF tool"
+          >
+            <g id="segments"></g>
+
+            <circle class="center-circle" cx="160" cy="160" r="46" />
+
+            <text x="160" y="155" class="center-label">CHOOSE</text>
+            <text x="160" y="170" class="center-label">A TOOL</text>
+            <circle class="outer-circle" cx="160" cy="160" r="155" />
+          </svg>
+
+          <button
+            class="tool-option merge"
+            data-tool="Merge PDF"
+            aria-label="Merge PDF"
+          >
+            <span class="tool-icon">🔗</span>
+            <span>Merge PDF</span>
+          </button>
+
+          <button
+            class="tool-option split"
+            data-tool="Split PDF"
+            aria-label="Split PDF"
+          >
+            <span class="tool-icon">🪓</span>
+            <span>Split PDF</span>
+          </button>
+
+          <button
+            class="tool-option rotate"
+            data-tool="Rotate PDF"
+            aria-label="Rotate PDF"
+          >
+            <span class="tool-icon">🔁</span>
+            <span>Rotate PDF</span>
+          </button>
+
+          <button
+            class="tool-option images"
+            data-tool="Images to PDF"
+            aria-label="Images to PDF"
+          >
+            <span class="tool-icon">🖼️</span>
+            <span>Images to PDF</span>
+          </button>
+        </div>
+
+        <p class="tool-hint" id="toolHint">
+          Upload files first, then choose what to do.
+        </p>
+      </section>
     </main>
   </body>
 </html>
