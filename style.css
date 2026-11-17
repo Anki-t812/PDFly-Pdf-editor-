@@ -177,3 +177,54 @@ nav {
   font-size: 13px;
   text-align: center;
 }
+
+/* Radial tool segments */
+.tool-segment {
+  fill: #f5f1f1;
+  stroke: #c6bcbc;
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+/* Highlight the active segment */
+.tool-segment.is-active {
+  fill: #d9f0dc;
+  stroke: #4caf50;
+  stroke-width: 2;
+}
+
+/* Tool button hover effect */
+.tool-option {
+  scale: 1;
+  transition: scale 0.2s ease;
+}
+
+/* Enlarge only the active tool */
+.tool-option.is-active {
+  scale: 1.12;
+  z-index: 3;
+}
+
+/* Keep the text color unchanged on hover */
+.tool-option:hover {
+  color: #333333;
+}
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.file-card {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.file-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}

@@ -6,77 +6,101 @@
     <title>PDFly</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <nav class="navbar">
       <div class="logo">
         <span>PDFly</span>
       </div>
+
       <div class="divider"></div>
+
       <div class="tagline">
         <span>Your files stay yours</span>
       </div>
     </nav>
 
     <main class="main-content">
-      <section class="upload-section">
+      <!-- Upload Section -->
+      <section class="upload-section" id="dropZone">
         <h2>Upload your Files</h2>
+
         <input
           multiple
           type="file"
           id="fileInput"
           accept=".pdf,.png,.jpg,.jpeg"
         />
-        <span class="text">PDF,PNG,JPG or JPEG</span>
+
+        <span class="text">PDF, PNG, JPG or JPEG</span>
+
         <label for="fileInput" class="upload-button"> Browse Files </label>
       </section>
+      <div class="preview-container" id="previewContainer"></div>
 
+      <!-- Circular Tool Selector -->
       <section class="tool-section">
         <div class="radial-menu">
           <svg
             viewBox="0 0 320 320"
             class="radial-svg"
+            id="radialSvg"
             role="group"
             aria-label="Choose a PDF tool"
           >
+            <!-- JavaScript generates the radial segments here -->
             <g id="segments"></g>
 
+            <!-- Center Circle -->
             <circle class="center-circle" cx="160" cy="160" r="46" />
 
+            <!-- Center Text -->
             <text x="160" y="155" class="center-label">CHOOSE</text>
+
             <text x="160" y="170" class="center-label">A TOOL</text>
+
+            <!-- Outer Circle -->
             <circle class="outer-circle" cx="160" cy="160" r="155" />
           </svg>
 
+          <!-- Merge PDF -->
           <button
+            type="button"
             class="tool-option merge"
-            data-tool="Merge PDF"
+            data-tool="merge"
             aria-label="Merge PDF"
           >
             <span class="tool-icon">🔗</span>
             <span>Merge PDF</span>
           </button>
 
+          <!-- Split PDF -->
           <button
+            type="button"
             class="tool-option split"
-            data-tool="Split PDF"
+            data-tool="split"
             aria-label="Split PDF"
           >
             <span class="tool-icon">🪓</span>
             <span>Split PDF</span>
           </button>
 
+          <!-- Rotate PDF -->
           <button
+            type="button"
             class="tool-option rotate"
-            data-tool="Rotate PDF"
+            data-tool="rotate"
             aria-label="Rotate PDF"
           >
             <span class="tool-icon">🔁</span>
             <span>Rotate PDF</span>
           </button>
 
+          <!-- Images to PDF -->
           <button
+            type="button"
             class="tool-option images"
-            data-tool="Images to PDF"
+            data-tool="images"
             aria-label="Images to PDF"
           >
             <span class="tool-icon">🖼️</span>
@@ -89,5 +113,8 @@
         </p>
       </section>
     </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
   </body>
 </html>
