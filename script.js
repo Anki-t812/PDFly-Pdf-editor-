@@ -4,11 +4,11 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 
 const fileInput = document.querySelector("#fileInput");
 const previewContainer = document.querySelector("#previewContainer");
+const dropZone = document.querySelector("#dropZone");
 
 let files = [];
-
-fileInput.addEventListener("change", (event) => {
-  files = Array.from(event.target.files);
+function handleFiles(selectedFiles) {
+  files = Array.from(selectedFiles);
 
   // CHANGED: async added to handle PDF rendering
   files.forEach(async (file) => {
@@ -88,4 +88,15 @@ fileInput.addEventListener("change", (event) => {
     fileCard.appendChild(removeBtn);
     previewContainer.appendChild(fileCard);
   });
+}
+
+dropZone.addEventListener("dragover", (event) => {
+  event.preventDefault();
+});
+dropZone.addEventListener("drop", (event) => {
+  event.preventDefault();
+  handleFiles(event.dataTransfer.files);
+});
+fileInput.addEventListener("change", (event) => {
+  handleFiles(event.target.files);
 });
